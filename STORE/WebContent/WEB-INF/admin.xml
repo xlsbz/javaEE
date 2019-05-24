@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<admin>
+	<p1>
+		<name>dhr</name>
+		<password>123</password>
+	</p1>
+	<p2>
+		<name>asd</name>
+		<password>222</password>
+	</p2>
+	<p3>
+		<name>zhangsan</name>
+		<password>aaa</password>
+	</p3>
+	
+</admin>

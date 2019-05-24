@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>
+  <!-- 解决全站编码过滤器 -->
+  <filter>
+  	<filter-name>SetCharacterEncodingFilter</filter-name>
+  	<filter-class>com.dhr.filter.SetCharacterEncodingFilter</filter-class>
+<!--   	<init-param> -->
+<!--   		<param-name>encoding</param-name> -->
+<!--   		<param-value>GBK</param-value> -->
+<!--   	</init-param> -->
+  </filter>
+  <filter-mapping>
+  	<filter-name>SetCharacterEncodingFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+  	<filter-name>CheckCustomerLoginFilter</filter-name>
+  	<filter-class>com.dhr.filter.CheckCustomerLoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>CheckCustomerLoginFilter</filter-name>
+  	<url-pattern>/apply/*</url-pattern>
+  </filter-mapping>
+  <filter>
+  	<filter-name>PrivilegeFilter</filter-name>
+  	<filter-class>com.dhr.filter.PrivilegeFilter</filter-class>
+  </filter>
+<!--   <filter-mapping> -->
+<!--   	<filter-name>PrivilegeFilter</filter-name> -->
+<!--   	<url-pattern>/manage/*</url-pattern> -->
+<!--   </filter-mapping> -->
+  <servlet>
+    <servlet-name>ConfigServlet</servlet-name>
+    <servlet-class>com.dhr.web.controller.ConfigServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.dhr.web.controller.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ApplyServlet</servlet-name>
+    <servlet-class>com.dhr.web.controller.ApplyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ProcessServlet</servlet-name>
+    <servlet-class>com.dhr.web.controller.ProcessServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>PrivilegeServlet</servlet-name>
+    <servlet-class>com.dhr.web.controller.PrivilegeServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>ConfigServlet</servlet-name>
+    <url-pattern>/manage/ConfigServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ApplyServlet</servlet-name>
+    <url-pattern>/apply/ApplyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProcessServlet</servlet-name>
+    <url-pattern>/manage/ProcessServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PrivilegeServlet</servlet-name>
+    <url-pattern>/manage/PrivilegeServlet</url-pattern>
+  </servlet-mapping>	
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

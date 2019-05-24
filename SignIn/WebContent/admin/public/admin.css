@@ -1,0 +1,241 @@
+
+ a:hover{
+ color:red;
+ background:#ff0000;}
+ .main  div{margin-top:5px;}
+ input{
+ margin-top:10px;
+ margin-bottom:10px;
+ }
+ h1{
+ color:red;
+ }
+body{background:url("../public/images/background.png")}£»
+  .titlespan{width:120px;display: inline-block;}
+  
+  .formText{height:32px;width:480px;border-radius:2px;}
+  .submitspan{width:260px;height:26px;display: inline-block;}
+    .formSubmit{height:56px;width:120px;border-radius:5px;}
+    
+    .public-content .public-content-cont .public-cont-table{
+	width:100%;
+}
+.public-content .two-col .public-cont-table{
+	width:71%;
+	font-size: 12px;
+	line-height: 38px;
+}
+.public-content .public-content-cont tr{
+	height: 38px;
+	text-align: center;
+	border: 1px solid #ccc;
+}
+.public-content .public-content-cont th{
+	background: #dedede;
+	padding: 5px;
+}
+.public-content .public-content-cont td{
+	height:38px;
+	border-right: 1px solid #ccc;
+}
+.public-content .public-content-cont .table-fun a{
+	display: inline-block;
+	width:40px;
+	height: 24px;
+	line-height: 24px;
+	padding: 3px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+.public-content .public-content-cont .thumb{
+	width: 150px;
+	height: 50px;
+	margin:10px;
+}
+.public-content .page{
+	text-align: center;
+	height: 34px;
+	line-height: 34px;
+	margin-top: 10px;
+}
+.public-content .page a{
+	display: inline-block;
+}
+.public-content .page .page-input{
+	width:40px;
+	height: 20px;
+	line-height: 20px;
+	padding-left: 5px;
+	border-radius: 5px;
+	border:1px solid #ccc;
+	outline: none;
+}
+.public-content .page .page-btn{
+	width:40px;
+	height: 28px;
+	line-height: 20px;
+	padding-left: 5px;
+	border-radius: 5px;
+	border: none;
+	color:#fff;
+	background: #6CB98F;
+}
+.public-content .public-cont-left{
+	width:260px;
+	border:1px solid #ccc;
+	padding: 5px;
+	float: left;
+	margin-right: 10px;
+}
+.public-content .two-col .col-1{
+	width:170px;
+}
+.public-content .two-col .col-2{
+	width:79%;
+}
+.public-content .public-cont-left .public-cont-title{
+	height: 28px;
+	line-height: 28px;
+	border-bottom: 1px dashed #ccc;
+}
+.public-content .public-cate-list{
+	padding: 5px;
+}
+.public-content .public-cate-list .public-cate-item{
+	height:24px;
+	line-height: 24px;
+}
+.public-content .public-cate-list .public-cate-item a:hover{
+	color:#6CB98F;
+}
+body{background: #fff;}
+.container{
+	width: 100%;
+    overflow: hidden;
+    background: #FFFFFF;
+}
+.public-nav{
+	height: 28px;
+	line-height: 28px;
+	border-bottom: 1px solid #ddd;
+    padding-left: 8px;
+}
+.public-nav a{
+	display: inline-block;
+	margin-left: 15px;
+	margin-right: 15px;
+	position: relative;
+}
+.public-content{
+	margin-top: 15px;
+}
+.public-content .public-content-header{
+	height: 28px;
+	line-height: 28px;
+	font-weight: 600;
+	padding-left: 10px;
+	border-bottom: 1px solid #dedede;
+}
+.public-content .public-content-cont{
+	padding:15px;
+	position: relative;
+}
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul,li {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a{
+	text-decoration: none;
+	color: #333;
+	display: block;
+}
+body{
+	background: url("images/bg.jpg");
+    font-size: 18px;
+}
+.clearfix{
+	zoom:1;
+}
+.clearfix:after{
+	content:".";
+	display:block;
+	visibility:hidden;
+	height:0;
+	clear:both;
+}
+.fl,.l{
+	float: left;
+}
+.fr,.r{
+	float: right;
+}
+/*margin-top*/
+.mt10{
+	margin-top: 10px;
+}
+.mt15{
+	margin-top: 15px;
+}
+.mt20{
+	margin-top: 20px;
+}
+.mt5{
+	margin-top: 5px;
+}
+.mt0{
+	margin-top: 0px;
+}
+/*padding-left*/
+.pl15{
+	padding-left: 15px;
+}
+.ac{
+border:1px solid rgb(222,222,222);
+padding:7px;
+border-radius:5px;
+font-size:16px;
+font-weight:bold;
+}
+a:hover{
+background:#ff0000;
+color:white;
+}

@@ -1,0 +1,760 @@
+数据层接口
+applyDao:
+/**
+ * 保存申请
+ * 
+ * @param apply
+*/
+void save(Apply apply);
+
+/**
+	 * 根据客户的id查询他的所有申请
+	 * 
+	 * @param id
+	 * @return
+	 */
+List<Apply> findByCustomer(Integer customerId);
+
+/**
+	 * 查询未关闭的申请的条数
+	 * 
+	 * @return
+	 */
+int findNotClosedApplyNumber();
+
+/**
+	 * 查询未关闭的申请.分页。状态是“申请审批中”
+	 * 
+	 * @return
+	 */
+List<Apply> findNotClosedApply(int startIndex, int size);
+
+/**
+	 * 根据申请编号查询申请,同时把申请对应的客户和班级信息查询出来。状态是“申请审批中”
+	 * 
+	 * @param number
+	 * @return
+	 */
+Apply findByNumber(String number);
+
+/**
+	 * 更新申请
+	 * 
+	 * @param apply
+	 */
+void update(Apply apply);
+
+
+==========================================================================================================
+classDao
+/**
+	 * 获取总记录条数
+	 * 
+	 * @return
+	 */
+int getTotalRecordsNumber();
+
+/**
+	 * 获取分页记录
+	 * 
+	 * @param startIndex
+	 *            开始记录的索引
+	 * @param size
+	 *            一次取出的记录条数
+	 * @return
+	 */
+List<Classes> findPageRecords(int startIndex, int size);
+
+/**
+	 * 根据班级类型ID查询总开班个数
+	 * 
+	 * @param classTypeId
+	 * @return
+	 */
+int getTotalRecordsNumber(String classTypeId);
+
+/**
+	 * 分页查询班级班级信息
+	 * 
+	 * @param startIndex
+	 * @param pageSize
+	 * @param classTypeId
+	 * @return
+	 */
+List<Classes> findPageRecords(int startIndex, int pageSize, String classTypeId);
+
+/**
+	 * 保存班级基本信息，如果班级关联的课程类型不为null，保存classTypeId
+	 * 
+	 * @param classes
+	 */
+void save(Classes classes);
+
+/**
+	 * 根据课程类型名称查询开班信息
+	 * 
+	 * @param classTypeName
+	 * @return
+	 */
+List<Classes> findClassesByClassTypeName(String classTypeName);
+
+/**
+	 * 根据班级ID查询班级
+	 * 
+	 * @param classesId
+	 * @return
+	 */
+Classes findById(String classesId);
+
+========================================================================================================
+calssTypeDao
+
+/**
+	 * 查询所有班级类型
+	 * 
+	 * @return
+	 */
+List<ClassType> findAll();
+
+/**
+	 * 增加班级类别信息
+	 * 
+	 * @param classType
+	 */
+void save(ClassType classType);
+
+/**
+	 * 根据ID查询班级类别信息
+	 * 
+	 * @param classTypeId
+	 * @return
+	 */
+ClassType findOne(String classTypeId);
+
+
+==========================================================================================================
+customerDao
+
+/**
+	 * 新增客户
+	 * 
+	 * @param customer
+	 */
+void save(Customer customer);
+
+/**
+	 * QBE：Query By Example 根据客户的属性字段进行查询。只要字段不是null，都作为查询条件.目前不支持模糊查询
+	 * 
+	 * @param customer
+	 * @return
+	 */
+List<Customer> find(Customer customer);
+
+/**
+	 * 适合返回结果只有一条的情况，如果返回的结果又多条，调用该方法应抛出异常
+	 * 
+	 * @param customer
+	 * @return 一条记录，要么没有
+	 */
+Customer uniqueResult(Customer customer);
+
+/**
+	 * 根据邮箱和电话查询客户
+	 * 
+	 * @param email
+	 * @param phoneNumber
+	 * @return 没有返回null
+	 */
+Customer find(String email, String phoneNumber);
+
+/**
+	 * 更新客户
+	 * 
+	 * @param customer
+	 */
+void update(Customer customer);
+
+
+==========================================================================================================
+customerStatusDao
+
+/**
+	 * 查询所有客户状态
+	 * 
+	 * @return
+	 */
+List<CustomerStatus> findAll();
+
+/**
+	 * 根据ID查询单个客户状态
+	 * 
+	 * @param customerStatusId
+	 * @return
+	 */
+CustomerStatus findOne(String customerStatusId);
+
+/**
+	 * 新增客户状态
+	 * 
+	 * @param customerStatus
+	 */
+void save(CustomerStatus customerStatus);
+
+==========================================================================================================
+functionDao
+
+/**
+	 * 查询所有功能
+	 * 
+	 * @return
+	 */
+List<Function> findAll();
+
+/**
+	 * 新增功能
+	 * 
+	 * @param function
+	 */
+void save(Function function);
+
+
+
+==========================================================================================================
+infoSourceDao
+/**
+	 * 查询所有信息来源数据
+	 * 
+	 * @return
+	 */
+List<InfoSource> findAll();
+
+/**
+	 * 新增信息来源
+	 * 
+	 * @param infoSource
+	 */
+void save(InfoSource infoSource);
+
+/**
+	 * 根据ID查询某个信息来源
+	 * 
+	 * @param infoSourceId
+	 * @return
+	 */
+InfoSource findOne(String infoSourceId);
+
+/**
+	 * 更新信息来源
+	 * 
+	 * @param infoSource
+	 */
+void update(InfoSource infoSource);
+
+/**
+	 * 批量删除
+	 * 
+	 * @param infoSourceId
+	 */
+void delete(String... infoSourceId);
+
+}
+
+==========================================================================================================
+roleDao
+
+/**
+	 * 查询所有角色
+	 * 
+	 * @return
+	 */
+List<Role> findAll();
+
+/**
+	 * 新增角色
+	 * 
+	 * @param role
+	 */
+void save(Role role);
+
+/**
+	 * 查询单个角色
+	 * 
+	 * @param roleId
+	 * @return
+	 */
+Role find(String roleId);
+
+/**
+	 * 修改角色和功能的关系
+	 * 
+	 * @param roleId
+	 * @param functionIds
+	 */
+void updateRoleFunction(String roleId, String[] functionIds);
+
+==========================================================================================================
+userDao
+
+/**
+	 * 查询用户
+	 * 
+	 * @param username
+	 * @param password
+	 * @return
+	 */
+User find(String username, String password);
+
+/**
+	 * 查询所有用户
+	 * 
+	 * @return
+	 */
+List<User> findAll();
+
+/**
+	 * 新增用户
+	 * 
+	 * @param user
+	 */
+void save(User user);
+
+/**
+	 * 查询单个用户
+	 * 
+	 * @param userId
+	 * @return
+	 */
+User find(String userId);
+
+/**
+	 * 修改用户权限
+	 * 
+	 * @param userId
+	 * @param roleIds
+	 */
+void updateUserRole(String userId, String[] roleIds);
+
+
+
+**********************************************************************************************************
+业务层
+
+applyService
+/**
+	 * 生成申请
+	 * 
+	 * @param apply
+	 */
+void genApply(Apply apply);
+
+/**
+	 * 根据客户查询申请次数
+	 * 
+	 * @param customer
+	 * @return
+	 */
+int checkApplyCount(Customer customer);
+
+/**
+	 * 检查客户是否有未关闭的申请
+	 * 
+	 * @param customer
+	 * @return
+	 */
+boolean checkIsClosed(Customer customer);
+
+/**
+	 * 查询所有未关闭的申请
+	 * 
+	 * @param num
+	 *            用户要看的页码，默认1
+	 * @return 封装了所有分页信息的Page对象
+	 */
+Page findAllNotClosedApplys(String num);
+
+/**
+	 * 根据申请编号查询申请
+	 * 
+	 * @param number
+	 * @return
+	 */
+Apply findApplyByNumber(String number);
+
+/**
+	 * 更新申请信息
+	 * 
+	 * @param apply
+	 */
+void update(Apply apply);
+
+
+==========================================================================================================
+configService
+
+infoSource
+/**
+	 * 查询所有的信息来源
+	 * 
+	 * @return List<InfoSource>
+	 */
+List<InfoSource> findAllInfoSources();
+
+/**
+	 * 添加信息来源
+	 * 
+	 * @param infoSource
+	 */
+void addInfoSource(InfoSource infoSource);
+
+/**
+	 * 根据id查询信息来源
+	 * 
+	 * @param infoSourceId
+	 * @return
+	 */
+InfoSource findInfoSourceById(String infoSourceId);
+
+/**
+	 * 保存修改后的信息来源
+	 * 
+	 * @param infoSource
+	 */
+void editInfoSource(InfoSource infoSource);
+
+/**
+	 * 删除信息来源
+	 * 
+	 * @param infoSourceId
+	 */
+void delInfoSource(String infoSourceId);
+
+/**
+	 * 批量删除信息来源
+	 * 
+	 * @param ids
+	 */
+void delMultiInfoSource(String[] infoSourceIds);
+
+classType
+/**
+	 * 查询所有的课程类型
+	 * 
+	 * @return
+	 */
+List<ClassType> findAllClassTypes();
+/**
+	 * 根据ID查询课程类型
+	 * 
+	 * @return
+	 */
+ClassType findClassTypeById(String classTypeId);
+
+/**
+	 * 新增课程类型
+	 * 
+	 * @param classType
+	 */
+void addClassType(ClassType classType);
+
+customerStatus
+/**
+	 * 查询所有客户状态
+	 * 
+	 * @return
+	 */
+List<CustomerStatus> findAllCustomerStatus();
+/**
+	 * 根据客户状态ID查询客户状态
+	 * 
+	 * @return
+	 */
+CustomerStatus findCustomerStatusById(String customerStatusId);
+
+/**
+	 * 新增学生状态
+	 * 
+	 * @param customerStatus
+	 */
+void addCustomerStatus(CustomerStatus customerStatus);
+
+classes
+/**
+ 	 * 查询所有班级信息
+	 * 根据用户要看的页码，查询封装了所有分页信息的Page对象
+	 * 
+	 * @param num
+	 *            用户要看的页码，如果为null，默认是看第1页
+	 * @return
+	 */
+Page findClasses(String num);
+
+classes
+	/**
+	 * 查询某个班级类型下的所有班级信息
+	 * 根据用户要看的页码，和班级类型，查询封装了所有分页信息的Page对象
+	 * 
+	 * @param num
+	 * @param classTypeId班级类型的id
+	 * @return
+	 */
+Page findClasses(String num, String classTypeId);
+
+/**
+	 * 添加开班信息。一个班级必须指定课程类型
+	 * 
+	 * @param classes
+	 */
+void addClasses(Classes classes);
+
+/**
+	 * 根据课程类型名称，查询开班信息
+	 * 
+	 * @param classType
+	 * @return
+	 */
+List<Classes> findClassesByClassTypeName(String classType);
+
+/**
+	 * 根据班级id查询班级信息
+	 * 
+	 * @param classesId
+	 * @return
+	 */
+Classes findClassesById(String classesId);
+
+
+
+==========================================================================================================
+customerService
+/**
+	 * 新用户注册
+	 * 
+	 * @param customer
+	 */
+void regist(Customer customer);
+
+/**
+	 * 用户登陆
+	 * 
+	 * @param email
+	 * @param phoneNumber
+	 * @return
+	 */
+Customer login(String email, String phoneNumber);
+
+/**
+	 * 修改个人信息
+	 * 
+	 * @param customer
+	 */
+void updateCustomer(Customer customer);
+
+/**
+	 * 根据激活码查询客户
+	 * 
+	 * @param activeCode
+	 * @return
+	 */
+Customer findCustomerByActiveCode(String activeCode);
+
+
+==========================================================================================================
+privilegesService
+/**
+	 * 管理员登陆
+	 * 
+	 * @return
+	 */
+User login(String username, String password);
+/**
+	 * 查询所有功能列表
+	 * 
+	 * @return
+	 */
+List<Function> findAllFunctions();
+
+/**
+	 * 新增功能
+	 * 
+	 * @param function
+	 */
+void addFunction(Function function);
+
+/**
+	 * 查询所有角色列表
+	 * 
+	 * @return
+	 */
+List<Role> findAllRoles();
+
+/**
+	 * 新增角色
+	 * 
+	 * @param role
+	 */
+void addRole(Role role);
+
+/**
+	 * 查询角色同时把关联的功能也查询出来
+	 * 
+	 * @param roleId
+	 * @return
+	 */
+Role findRoleById(String roleId);
+
+/**
+	 * 给角色功能添加功能
+	 * 
+	 * @param roleId
+	 * @param functionIds
+	 */
+void grantFunction2Role(String roleId, String[] functionIds);
+
+/**
+	 * 查询所有管理员
+	 * 
+	 * @return
+	 */
+List<User> findAllUsers();
+
+/**
+	 * 新增管理员
+	 * 
+	 * @param user
+	 */
+void addUser(User user);
+
+/**
+	 *查询管理员并把他的所有角色查出来
+	 * 
+	 * @param userId
+	 * @return
+	 */
+User findUserById(String userId);
+
+/**
+	 * 给管理员分配角色
+	 * 
+	 * @param userId
+	 * @param roleIds
+	 */
+void grantRole2User(String userId, String[] roleIds);
+
+
+**********************************************************************************************************
+controller
+
+applyController
+public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String op = request.getParameter("op");
+		if ("showApplyUI".equals(op)) {
+			showApplyUI(request, response);
+		} else if ("editCustomerUI".equals(op)) {
+			editCustomerUI(request, response);
+		} else if ("editCustomer".equals(op)) {
+			editCustomer(request, response);
+		} else if ("genApply".equals(op)) {
+			genApply(request, response);
+		} else if ("processApplyUI".equals(op)) {
+			processApplyUI(request, response);
+		}
+	}
+
+
+==========================================================================================================
+configController
+public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String op = request.getParameter("op");
+		if ("listAllInfoSources".equals(op)) {
+			listAllInfoSources(request, response);
+		} else if ("addInfoSource".equals(op)) {
+			addInfoSource(request, response);
+		} else if ("editInfoSourceUI".equals(op)) {
+			editInfoSourceUI(request, response);
+		} else if ("editInfoSource".equals(op)) {
+			editInfoSource(request, response);
+		} else if ("delInfoSource".equals(op)) {
+			delInfoSource(request, response);
+		} else if ("delMultiInfoSource".equals(op)) {
+			delMultiInfoSource(request, response);
+		} else if ("listAllCustomerStatus".equals(op)) {
+			listAllCustomerStatus(request, response);
+		} else if ("listAllClassTypes".equals(op)) {
+			listAllClassTypes(request, response);
+		} else if ("addCustomerStatus".equals(op)) {
+			addCustomerStatus(request, response);
+		} else if ("addClassType".equals(op)) {
+			addClassType(request, response);
+		} else if ("listClasses".equals(op)) {
+			listClasses(request, response);
+		} else if ("addClassesUI".equals(op)) {
+			addClassesUI(request, response);
+		} else if ("addClasses".equals(op)) {
+			addClasses(request, response);
+		}
+	}
+==========================================================================================================
+userController
+
+public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String op = request.getParameter("op");
+		if ("captcha".equals(op)) {
+			captcha(request, response);
+		} else if ("registUI".equals(op)) {
+			registUI(request, response);
+		} else if ("regist".equals(op)) {
+			regist(request, response);
+		} else if ("login".equals(op)) {
+			login(request, response);
+		} else if ("validateEmail".equals(op)) {
+			validateEmail(request, response);
+		} else if ("active".equals(op)) {
+			active(request, response);
+		} else if ("logout".equals(op)) {
+			logout(request, response);
+		} else if ("mlogin".equals(op)) {
+			mlogin(request, response);
+		}
+	}
+
+==========================================================================================================
+privilegesController
+
+public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String op = request.getParameter("op");
+		if ("listFunctions".equals(op)) {
+			listFunctions(request, response);
+		} else if ("addFunction".equals(op)) {
+			addFunction(request, response);
+		} else if ("listRoles".equals(op)) {
+			listRoles(request, response);
+		} else if ("addRole".equals(op)) {
+			addRole(request, response);
+		} else if ("grantRole".equals(op)) {
+			grantRole(request, response);
+		} else if ("saveGrantRole".equals(op)) {
+			saveGrantRole(request, response);
+		} else if ("listUsers".equals(op)) {
+			listUsers(request, response);
+		} else if ("addUser".equals(op)) {
+			addUser(request, response);
+		} else if ("grantUser".equals(op)) {
+			grantUser(request, response);
+		} else if ("saveGrantUser".equals(op)) {
+			saveGrantUser(request, response);
+		}
+	}
+==========================================================================================================
+processController
+
+public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String op = request.getParameter("op");
+		if ("listApplys".equals(op)) {
+			listApplys(request, response);
+		} else if ("passApply".equals(op)) {
+			passApply(request, response);
+		} else if ("closeApply".equals(op)) {
+			closeApply(request, response);
+		}
+	}
+

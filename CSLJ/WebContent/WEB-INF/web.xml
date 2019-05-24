@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <servlet>
+    <servlet-name>StudentS</servlet-name>
+    <servlet-class>controller.StudentS</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>StudentJobS</servlet-name>
+    <servlet-class>controller.StudentJobS</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AdminS</servlet-name>
+    <servlet-class>controller.AdminS</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>IndexS</servlet-name>
+   <servlet-class>controller.IndexS</servlet-class>
+  <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentS</servlet-name>
+    <url-pattern>/home/StudentS</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StudentJobS</servlet-name>
+    <url-pattern>/home/StudentJobS</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminS</servlet-name>
+    <url-pattern>/admin/AdminS</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminS</servlet-name>
+    <url-pattern>/home/AdminS</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>IndexS</servlet-name>
+  <url-pattern>/home/IndexS</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+  <servlet-name>IndexS</servlet-name>
+  <url-pattern>/company/IndexS</url-pattern>
+  </servlet-mapping>
+</web-app>

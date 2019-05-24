@@ -1,0 +1,101 @@
+@CHARSET "UTF-8";
+*{
+			margin: 0;
+			padding: 0;
+			-webkit-box-sizing: border-box;
+		    box-sizing: border-box;
+		    -webkit-user-select: none;
+		    outline: 0;
+		    -webkit-tap-highlight-color: transparent;
+		    -webkit-tap-highlight-color: transparent;
+		}
+		h1{
+		color:white;
+		}
+		body {
+		    line-height: 1.6;
+		    font-family: -apple-system-font,Helvetica Neue,sans-serif;
+		}
+		.zjtopbox{
+			width: 100%;
+			overflow: hidden;
+			height: 10rem;
+			background: url(zjbg.png) no-repeat center top/100% 10rem;
+			position: relative;
+		}
+		.zjtopbox .zjtxtinfo{
+			position: absolute;
+			width: 6.1rem;
+			height: 3.35rem;
+			background: url(zjtxtbg.png) no-repeat center top/6.1rem 3.35rem;
+			padding: 25px 30px;
+			left: 50%;
+			margin-left: -3.05rem;
+			color: #fff1d9;
+			font-size: 14px;
+			top: 4.2rem;
+		}
+		.zjtopbox .zjtxtinfo .title{
+			margin-bottom: 10px;
+			text-align: center;
+			font-size: 16px;
+		}
+		.zjtxtbox{
+			background: #da3f59;
+			overflow: hidden;
+		}
+		.zjtxtbox .list{
+			padding: 0 15px;
+			font-size: 0;
+		}
+		.zjtxtbox .list+.list{
+			margin-top: 10px;
+		}
+		.zjtxtbox .list .type{
+			color: #ffedcd;
+			font-size: 15px;
+			margin-bottom: 5px;
+		}
+		.zjtxtbox .list input{
+			margin: 0;
+			border: none;
+			border-radius: 4px;
+			background: #f5f5f5;
+			padding: 0 8px;
+			height: 32px;
+			font-size: 15px;
+			color: #333;
+		    line-height: 21px;
+			width: 100%;
+			-webkit-appearance: none;
+    		outline: 0;
+		}
+		.zjtxtbox .list .info{
+			font-size: 14px;
+			color: #ffedcd;
+		}
+		.zjxxbox .btns{
+			margin:20px 15px;
+		}
+		.zjxxbox .btns .ui-btn{
+			
+			position: relative;
+		    display: block;
+		    margin-left: auto;
+		    margin-right: auto;
+		    padding-left: 14px;
+		    padding-right: 14px;
+		    box-sizing: border-box;
+		    font-size: 18px;
+		    text-align: center;
+		    text-decoration: none;
+		    color: #fff;
+		    line-height: 2.55555556;
+		    border-radius: 5px;
+		    -webkit-tap-highlight-color: rgba(0,0,0,0);
+		    overflow: hidden;
+		    line-height: 44px;
+   			height: 44px;
+   			background-color: #ffedcd;
+			color: #da3f59;
+		}
